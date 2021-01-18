@@ -6,7 +6,7 @@ jobs:
     name: Hellow world action
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v1
+      - uses: actions/checkout@v1
       - uses: ./action-a
         with:
           My_NAME: "Mona"
