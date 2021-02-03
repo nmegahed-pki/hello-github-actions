@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Testing executing docker files
-      - run: |
+        run: |
           docker build -t testing:latest .
           docker run --detach --name testing testing:latest
