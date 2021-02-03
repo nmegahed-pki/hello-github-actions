@@ -1,12 +1,14 @@
-name: A workflow for my Hello World file
-on: push
+on: [push]
 
 jobs:
-  build:
-    name: Hellow world action
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-      - uses: actions/checkout@v1
-      - uses: ./action-a
-        with:
-          My_NAME: "Mona"
+    - uses: actions/checkout@v2
+    - id: hello_actions
+      uses: actions/hello_actions@v1
+      with:
+        who-to-greet: 'Nour Megahed'
+    - run: echo random-number ${{ steps.hello_actions.outputs.random-number }}
+      shell: bash
